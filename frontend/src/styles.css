@@ -1,0 +1,41 @@
+:root {
+  --bg: #f6f4ee; --card: #fff; --ink: #14213d; --mut: #5b6475; --line: #dcd8cc;
+  --acc: #b45309; --blue: #3a86c8; --band: #f9d7b0; --bad: #b91c1c; --ok: #15803d; --warn: #b45309;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a; --card: #1b2540; --ink: #f1efe8; --mut: #a3adc2; --line: #2c3860;
+    --acc: #f28c28; --blue: #6cb2ee; --band: #5a3a1a; --bad: #f87171; --ok: #4ade80; --warn: #fbbf24;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.4 Arial, Helvetica, sans-serif; }
+header { padding: 20px 24px 0; max-width: 1100px; margin: auto; }
+h1 { margin: 0; font-size: 26px; }
+header p { margin: 4px 0 0; color: var(--mut); }
+main { padding: 16px 24px 32px; display: flex; flex-direction: column; gap: 16px; max-width: 1100px; margin: auto; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.k b { display: block; font-size: 34px; }
+.k span { color: var(--mut); font-size: 14px; }
+.wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 560px; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 15px; }
+th { color: var(--mut); font-weight: 600; }
+tbody tr { cursor: pointer; }
+tbody tr:hover, tr.sel { background: var(--bg); }
+.tag { padding: 2px 8px; border-radius: 99px; font-size: 13px; font-weight: 700; border: 1px solid currentColor; }
+.risk { color: var(--bad); } .over { color: var(--warn); } .ok, .okk { color: var(--ok); }
+h2 { margin: 0 0 8px; font-size: 20px; }
+svg { width: 100%; height: auto; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 8px; }
+select, input[type="number"] { font: inherit; padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+input[type="number"] { width: 100px; }
+button { font: inherit; font-weight: 700; padding: 10px 16px; border: 0; border-radius: 8px; background: var(--acc); color: #14213d; cursor: pointer; }
+button.quiet { background: var(--line); color: var(--ink); }
+button.done { background: var(--ok); }
+button:disabled { opacity: .5; cursor: default; }
+.leg { color: var(--mut); font-size: 14px; }
+summary { cursor: pointer; font-weight: 700; }
+pre { overflow-x: auto; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
